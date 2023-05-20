@@ -38,11 +38,18 @@ namespace lab12tema
             Console.WriteLine($"Removed first value({queue1.Dequeue()}) => [{queue1}]");
             Console.WriteLine($"Number of elements in queue: {queue1.Count()}");
 
+            var listQueue = new ListQueue<Element<String>,String>();
+            Console.WriteLine($"Added value to ListQueue => [{listQueue.Enqueue("A")}]");
+            Console.WriteLine($"Added value to ListQueue => [{listQueue.Enqueue("B")}]");
+            Console.WriteLine($"Added value to ListQueue => [{listQueue.Enqueue("C")}]");
 
+            Console.WriteLine($"Removed first value({listQueue.Dequeue()}) => [{listQueue}]");
+            Console.WriteLine($"Number of elements in queue: {listQueue.Count()}");
 
             Console.WriteLine($"________");
             Console.WriteLine($"________");
             BenchMarkQueue(new Queue<int>(10, 10), 100);
+            BenchMarkQueue(new ListQueue<Element<int>, int>(), 100);
             BenchMarkQueue(new SimpleQueue<int>(10), 100);
         }
 
